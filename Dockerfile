@@ -29,6 +29,9 @@ VOLUME ["/downloads"]
 EXPOSE 9091
 EXPOSE 54321
 
+# Add a standard config.json 
+ADD settings.json /tmp/
+
 # Add config.sh to execute during container startup
 RUN mkdir -p /etc/my_init.d
 ADD config.sh /etc/my_init.d/config.sh
