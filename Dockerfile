@@ -1,5 +1,5 @@
-FROM phusion/baseimage:0.9.11
-MAINTAINER gfjardim <gfjardim@gmail.com>
+FROM phusion/baseimage:0.9.15
+MAINTAINER corbt <kyle@corbt.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set correct environment variables
