@@ -1,18 +1,5 @@
 FROM phusion/baseimage:0.9.15
 MAINTAINER corbt <kyle@corbt.com>
-ENV DEBIAN_FRONTEND noninteractive
-
-# Set correct environment variables
-ENV HOME /root
-
-# Ensure UTF-8
-RUN locale-gen en_US.UTF-8
-ENV LANG       en_US.UTF-8
-ENV LC_ALL     en_US.UTF-8
-
-# Fix a Debianism of the nobody's uid being 65534
-RUN usermod -u 99 nobody
-RUN usermod -g 100 nobody
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
@@ -27,7 +14,6 @@ RUN apt-get install -qy --force-yes transmission-daemon
 VOLUME ["/config"]
 VOLUME ["/downloads"]
 EXPOSE 9091
-EXPOSE 54321
 
 # Add a standard config.json 
 ADD settings.json /tmp/
